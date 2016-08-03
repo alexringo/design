@@ -1,5 +1,6 @@
-// Share Button
+// Click Button
 $("body").on("click",".shareitem.share a.shareindex,.showMoreOptions",function(e){e.preventDefault(),e.stopImmediatePropagation(),$(this).parents(".shareitem.share").addClass("active")}),$("body").click(function(e){0===$(e.target).closest(".shareitem.share").length&&$(".shareitem.share").removeClass("active")});
+$("body").on("click",".comment_body .time_showup,.showMoreOptions",function(e){e.preventDefault(),e.stopImmediatePropagation(),$(this).parents(".comment_body").addClass("active")}),$("body").click(function(e){0===$(e.target).closest(".comment_body").length&&$(".comment_body").removeClass("active")});
 // Sub Navigation
 var Script=function(){jQuery('.nav-menu2 .sub-menu > a').click(function(){var last=jQuery('.sub-menu.open',$('.nav-menu2'));last.removeClass("open");jQuery('.dropdown').addClass("open");jQuery('.dropdown',last).removeClass("open");jQuery('.sub',last).slideUp(300);var sub=jQuery(this).next();if(sub.is(":visible")){jQuery('.dropdown',jQuery(this)).removeClass("open");jQuery(this).parent().removeClass("open");sub.slideUp(300)}else{jQuery('.dropdown',jQuery(this)).addClass("open");jQuery(this).parent().addClass("open");sub.slideDown(300)}var o=($(this).offset());diff=300-o.top;if(diff>0)$(".nav-menu2").scrollTo("-="+Math.abs(diff),500);else $(".nav-menu2").scrollTo("+="+Math.abs(diff),500)})}();
 // Tab Menu Sidebar
