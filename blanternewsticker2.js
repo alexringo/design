@@ -8,6 +8,28 @@
  *     close_button
  *     WWW.IDBLANTER.COM
  */
+var entries; var feed;
+var feed_url = blog_url.match(/\/$/) ? blog_url : blog_url+"/";
+feed_url += "feeds/posts/default";
+function recent_post_createEntries(){
+    var entries = feed.entry;
+    var entriesArr = [];
+    for(var i=0; i<latest_post; i++){
+        var entry = entries[i];
+        var entryObj = new Object();
+        entryObj.title = entry.title.$t;
+        entryObj.href  = getHref(entry.link);
+        entriesArr.push(entryObj);
+    }
+    return entriesArr;
+}
+function getHref(links){
+    for(var i=0; i<links.length; i++){
+        var link = links[i];
+        if(link.rel == "alternate"){return link.href;}
+    }
+    return null;
+}
 function recent_post_start(json){
     feed = json.feed;
     entries = recent_post_createEntries();
