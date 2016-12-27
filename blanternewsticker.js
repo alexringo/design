@@ -63,6 +63,7 @@ function recent_post_style(){
 function recent_post_content(){
     var s = "<div id='recent_post' title='Breaking News'>";
     if(info_text){
+    s += "<div class='wrapper'>";
     s += "<div class='newstitle'>";
     s += "Breaking News";
     s += "</div>";
@@ -76,6 +77,7 @@ function recent_post_content(){
         if(i != latest_post-1){s += " | ";}
     }
     s += "</marquee>";
+    s += "</div>";
     if(close_button){
 	s += "<div style='float:right; margin-right:10px;'>";
     s += "<a href='javascript:void(0)' onclick='document.getElementById(\"recent_post\").style.display=\"none\"'>";
